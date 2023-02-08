@@ -10,7 +10,7 @@
 		<jmeter-version>5.5</jmeter-version>
 		<jmeter.lib.scope>provided</jmeter.lib.scope>
 		<jdk.version>1.8</jdk.version>
-		<cb-sdk-version>3.4.1</cb-sdk-version>
+		<cb-sdk-version>3.3.4</cb-sdk-version>
 	</properties>
 
 	<dependencies>
@@ -48,6 +48,23 @@
 					<optimize>true</optimize>
 					<showDeprecation>true</showDeprecation>
 					<showWarnings>true</showWarnings>
+				</configuration>
+			</plugin>
+			<!-- any other plugins -->
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
 				</configuration>
 			</plugin>
 		</plugins>
